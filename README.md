@@ -1,0 +1,2 @@
+# Cursed Arcade
+Videojoc

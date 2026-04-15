@@ -1,0 +1,838 @@
+[gd_scene load_steps=56 format=3 uid="uid://dykt64gmplmyx"]
+
+[ext_resource type="Script" uid="uid://cq66dv8834xh6" path="res://scripts/menu.gd" id="1_5fdov"]
+[ext_resource type="Texture2D" uid="uid://ba845jy0mi0fb" path="res://recreativa/Recreativa.png" id="1_o0tnf"]
+[ext_resource type="Texture2D" uid="uid://dxmdkivq2ufsv" path="res://recreativa/Recreativa2.png" id="2_jmdev"]
+[ext_resource type="Texture2D" uid="uid://bo3jdtst45eeg" path="res://recreativa/Recreativa3.png" id="3_b6cxs"]
+[ext_resource type="Script" uid="uid://bg3ewmavlr2bg" path="res://scripts/recreativa.gd" id="4_aaywf"]
+[ext_resource type="Shader" uid="uid://2uveenmdpuyv" path="res://shaders/add.gdshader" id="5_jvsdq"]
+[ext_resource type="Shader" uid="uid://vvjmwb3ef6dt" path="res://shaders/remove_black.gdshader" id="5_thu7x"]
+[ext_resource type="Texture2D" uid="uid://cmnutpd1vtc4x" path="res://FNaF 1 Textures/Static & Menu/Full Static/12.png" id="6_2af52"]
+[ext_resource type="Texture2D" uid="uid://bx3nw584j4ly7" path="res://FNaF 1 Textures/Static & Menu/Full Static/13.png" id="7_7ycwl"]
+[ext_resource type="Texture2D" uid="uid://c5diiii7m8r63" path="res://FNaF 1 Textures/Static & Menu/Full Static/14.png" id="8_rtd1e"]
+[ext_resource type="Texture2D" uid="uid://djf75jcvyshdw" path="res://FNaF 1 Textures/Static & Menu/Full Static/15.png" id="9_6c8sk"]
+[ext_resource type="Texture2D" uid="uid://c5y5ewvuwro26" path="res://FNaF 1 Textures/Static & Menu/Full Static/16.png" id="10_5p0sf"]
+[ext_resource type="Texture2D" uid="uid://b05rwv0hqo5xn" path="res://FNaF 1 Textures/Static & Menu/Full Static/17.png" id="11_7t7qg"]
+[ext_resource type="Texture2D" uid="uid://dfsps4ms3u451" path="res://FNaF 1 Textures/Static & Menu/Full Static/18.png" id="12_l3wcu"]
+[ext_resource type="Texture2D" uid="uid://cl4miu4vaffcb" path="res://FNaF 1 Textures/Static & Menu/Full Static/20.png" id="13_i7htd"]
+[ext_resource type="Texture2D" uid="uid://b2dpwygj0kv5i" path="res://FNaF 1 Textures/Static & Menu/Divided Static/8.png" id="14_760fv"]
+[ext_resource type="Texture2D" uid="uid://cpbm4p7syocxp" path="res://FNaF 1 Textures/Static & Menu/Divided Static/10.png" id="15_rehui"]
+[ext_resource type="Texture2D" uid="uid://hovbm37ufcty" path="res://FNaF 1 Textures/Static & Menu/Divided Static/21.png" id="16_yvxia"]
+[ext_resource type="Texture2D" uid="uid://bxnr2b0q0iscr" path="res://FNaF 1 Textures/Static & Menu/Divided Static/22.png" id="17_nxcfj"]
+[ext_resource type="Texture2D" uid="uid://rhs3teswdga3" path="res://FNaF 1 Textures/Static & Menu/Divided Static/430.png" id="18_uwbky"]
+[ext_resource type="Texture2D" uid="uid://dvswxm7ol60sl" path="res://FNaF 1 Textures/Static & Menu/Divided Static/434.png" id="19_r54wa"]
+[ext_resource type="Texture2D" uid="uid://8nxbeod87rxj" path="res://FNaF 1 Textures/Static & Menu/Divided Static/435.png" id="20_uds2g"]
+[ext_resource type="Texture2D" uid="uid://d360m7aqe0g6j" path="res://FNaF 1 Textures/Static & Menu/Divided Static/436.png" id="21_jvsdq"]
+[ext_resource type="Texture2D" uid="uid://dqg6l4oxxxhc0" path="res://FNaF 1 Textures/Static & Menu/Divided Static/437.png" id="22_m74h7"]
+[ext_resource type="Texture2D" uid="uid://dqeqp105l56ms" path="res://FNaF 1 Textures/Static & Menu/Divided Static/438.png" id="23_gut0v"]
+[ext_resource type="Texture2D" uid="uid://bxhavoaovv8vw" path="res://FNaF 1 Textures/Static & Menu/Divided Static/439.png" id="24_5fdov"]
+[ext_resource type="Script" uid="uid://bpaw5cap5p4ix" path="res://scripts/divided_static.gd" id="25_rehui"]
+[ext_resource type="FontFile" uid="uid://r6lke7jvjnkr" path="res://fonts/PressStart2P-Regular.ttf" id="26_yvxia"]
+[ext_resource type="Script" uid="uid://2fpo3xc1heyt" path="res://scripts/menu_button.gd" id="27_nxcfj"]
+[ext_resource type="AudioStream" uid="uid://bntw11mtm4nao" path="res://audio/blip3.wav" id="28_uds2g"]
+[ext_resource type="AudioStream" uid="uid://l8ta267g3jye" path="res://audio/darkness music.wav" id="28_uwbky"]
+[ext_resource type="Script" uid="uid://bo2q6d8yeihfq" path="res://scripts/label_night.gd" id="29_gut0v"]
+[ext_resource type="AudioStream" uid="uid://dm38ldvo847ix" path="res://audio/static.wav" id="29_r54wa"]
+[ext_resource type="Texture2D" uid="uid://coq1v3l7iv1oq" path="res://textures/noticia.png" id="32_m74h7"]
+[ext_resource type="Script" uid="uid://crdlqapieb261" path="res://scripts/custom.gd" id="35_22i10"]
+[ext_resource type="Texture2D" uid="uid://41kn0ebugh8b" path="res://textures/Puppetjump/frame_10_delay-0.1s.png" id="36_gwo1h"]
+[ext_resource type="Texture2D" uid="uid://chv8faldf6s2o" path="res://textures/fotos/pngwing.com.png" id="37_0d5s4"]
+[ext_resource type="Texture2D" uid="uid://wju7tsga0ivd" path="res://textures/fotos/IMG_3071.png" id="38_pa8yy"]
+[ext_resource type="Texture2D" uid="uid://dpkmgjaep8c38" path="res://textures/fotos/IMG_3086-removebg-preview.png" id="39_ftgtj"]
+[ext_resource type="Texture2D" uid="uid://bkqol0b7pv5h" path="res://textures/fotos/OIP.webp" id="40_xt522"]
+[ext_resource type="Texture2D" uid="uid://k06u64ml3og7" path="res://textures/fotos/IMG_3076.png" id="41_dcs4r"]
+[ext_resource type="Texture2D" uid="uid://bg78itnjuvlra" path="res://textures/fotos/IMG_3066.png" id="42_sm01i"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1abgu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_o0tnf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_jmdev")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_b6cxs")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dek3k"]
+shader = ExtResource("5_jvsdq")
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8fhjo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_2af52")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_7ycwl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_rtd1e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_6c8sk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_5p0sf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_7t7qg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_l3wcu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_i7htd")
+}],
+"loop": true,
+"name": &"default",
+"speed": 60.0
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yqqfh"]
+shader = ExtResource("5_thu7x")
+shader_parameter/threshold = 0.6
+shader_parameter/alpha = 0.2
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_22i10"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_760fv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_rehui")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_yvxia")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_nxcfj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_uwbky")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_r54wa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_uds2g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_jvsdq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_m74h7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_gut0v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_5fdov")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[sub_resource type="Gradient" id="Gradient_rehui"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_yvxia"]
+gradient = SubResource("Gradient_rehui")
+
+[sub_resource type="Animation" id="Animation_uwbky"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(994.244, -38)]
+}
+
+[sub_resource type="Animation" id="Animation_nxcfj"]
+resource_name = "scan"
+length = 20.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 20),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(994.244, -38), Vector2(994.244, 1192)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_r54wa"]
+_data = {
+&"RESET": SubResource("Animation_uwbky"),
+&"scan": SubResource("Animation_nxcfj")
+}
+
+[sub_resource type="Animation" id="Animation_5fdov"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_gut0v"]
+resource_name = "show newspaper"
+length = 9.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 7, 9),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yqqfh"]
+_data = {
+&"RESET": SubResource("Animation_5fdov"),
+&"show newspaper": SubResource("Animation_gut0v")
+}
+
+[node name="Menu" type="Node2D"]
+script = ExtResource("1_5fdov")
+
+[node name="Background" type="CanvasLayer" parent="."]
+layer = -128
+
+[node name="ColorRect" type="ColorRect" parent="Background"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+metadata/_edit_lock_ = true
+
+[node name="recreativa" type="AnimatedSprite2D" parent="."]
+position = Vector2(693, 0)
+scale = Vector2(5.08, 5.4)
+sprite_frames = SubResource("SpriteFrames_1abgu")
+centered = false
+script = ExtResource("4_aaywf")
+metadata/_edit_lock_ = true
+
+[node name="rest" type="Timer" parent="recreativa"]
+one_shot = true
+
+[node name="activar" type="Timer" parent="recreativa"]
+one_shot = true
+
+[node name="fade" type="Timer" parent="recreativa"]
+wait_time = 0.3
+autostart = true
+
+[node name="static" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_dek3k")
+position = Vector2(0, 2.38419e-07)
+scale = Vector2(1.54688, 1.5)
+sprite_frames = SubResource("SpriteFrames_8fhjo")
+autoplay = "default"
+centered = false
+metadata/_edit_lock_ = true
+
+[node name="divided static" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_yqqfh")
+scale = Vector2(1.54688, 1.5)
+sprite_frames = SubResource("SpriteFrames_22i10")
+autoplay = "default"
+centered = false
+script = ExtResource("25_rehui")
+metadata/_edit_lock_ = true
+
+[node name="rest" type="Timer" parent="divided static"]
+one_shot = true
+
+[node name="activar" type="Timer" parent="divided static"]
+one_shot = true
+
+[node name="scan line" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.117647)
+position = Vector2(994.244, -38)
+scale = Vector2(32.1799, 0.547)
+texture = SubResource("GradientTexture2D_yvxia")
+metadata/_edit_lock_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="scan line"]
+libraries = {
+&"": SubResource("AnimationLibrary_r54wa")
+}
+autoplay = "scan"
+
+[node name="GUI" type="CanvasLayer" parent="."]
+
+[node name="Title" type="Label" parent="GUI"]
+texture_filter = 1
+offset_left = 702.0
+offset_top = 14.0
+offset_right = 1194.0
+offset_bottom = 140.0
+theme_override_fonts/font = ExtResource("26_yvxia")
+theme_override_font_sizes/font_size = 36
+text = "CURSED ARCADE"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="new game" type="Label" parent="GUI"]
+texture_filter = 1
+offset_left = 742.0
+offset_top = 600.0
+offset_right = 1034.0
+offset_bottom = 636.0
+mouse_filter = 0
+theme_override_fonts/font = ExtResource("26_yvxia")
+theme_override_font_sizes/font_size = 36
+text = "New Game"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("27_nxcfj")
+metadata/_edit_lock_ = true
+
+[node name="continue" type="Label" parent="GUI"]
+texture_filter = 1
+offset_left = 742.0
+offset_top = 700.0
+offset_right = 1030.0
+offset_bottom = 744.0
+mouse_filter = 0
+theme_override_fonts/font = ExtResource("26_yvxia")
+theme_override_font_sizes/font_size = 36
+text = "Continue"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("27_nxcfj")
+metadata/_edit_lock_ = true
+
+[node name="arrow" type="Label" parent="GUI"]
+visible = false
+texture_filter = 1
+offset_left = 637.0
+offset_top = 642.0
+offset_right = 724.0
+offset_bottom = 692.0
+theme_override_fonts/font = ExtResource("26_yvxia")
+theme_override_font_sizes/font_size = 36
+text = ">>"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="sixth night" type="Label" parent="GUI"]
+visible = false
+offset_left = 742.0
+offset_top = 800.0
+offset_right = 1066.0
+offset_bottom = 844.0
+mouse_filter = 0
+theme_override_fonts/font = ExtResource("26_yvxia")
+theme_override_font_sizes/font_size = 36
+text = "6th Night"
+script = ExtResource("27_nxcfj")
+metadata/_edit_lock_ = true
+
+[node name="custom night" type="Label" parent="GUI"]
+visible = false
+offset_left = 742.0
+offset_top = 900.0
+offset_right = 1174.0
+offset_bottom = 944.0
+mouse_filter = 0
+theme_override_fonts/font = ExtResource("26_yvxia")
+theme_override_font_sizes/font_size = 36
+text = "Custom Night"
+script = ExtResource("27_nxcfj")
+metadata/_edit_lock_ = true
+
+[node name="label night" type="Label" parent="GUI"]
+offset_left = 742.0
+offset_top = 750.0
+offset_right = 936.0
+offset_bottom = 773.0
+theme_override_fonts/font = ExtResource("26_yvxia")
+text = "Night 1"
+script = ExtResource("29_gut0v")
+metadata/_edit_lock_ = true
+
+[node name="select" type="AudioStreamPlayer" parent="GUI"]
+stream = ExtResource("28_uds2g")
+
+[node name="newspaper" type="TextureRect" parent="GUI"]
+process_mode = 3
+visible = false
+offset_right = 1980.0
+offset_bottom = 1080.0
+texture = ExtResource("32_m74h7")
+metadata/_edit_lock_ = true
+
+[node name="animation" type="AnimationPlayer" parent="GUI/newspaper"]
+libraries = {
+&"": SubResource("AnimationLibrary_yqqfh")
+}
+
+[node name="music" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+stream = ExtResource("28_uwbky")
+autoplay = true
+
+[node name="static sound" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+stream = ExtResource("29_r54wa")
+autoplay = true
+
+[node name="CustomNight" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="Control" type="Control" parent="CustomNight"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1980.0
+offset_bottom = 1080.0
+mouse_filter = 2
+script = ExtResource("35_22i10")
+metadata/_edit_lock_ = true
+
+[node name="Chars" type="Node2D" parent="CustomNight/Control"]
+z_index = 5
+
+[node name="Puppet" type="TextureRect" parent="CustomNight/Control/Chars"]
+offset_left = 175.0
+offset_top = 200.0
+offset_right = 375.0
+offset_bottom = 400.0
+texture = ExtResource("36_gwo1h")
+expand_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="Level" type="Label" parent="CustomNight/Control/Chars/Puppet"]
+layout_mode = 0
+offset_top = 200.0
+offset_right = 200.0
+offset_bottom = 262.0
+theme_override_fonts/font = ExtResource("26_yvxia")
+theme_override_font_sizes/font_size = 54
+text = "20"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Minus" type="Button" parent="CustomNight/Control/Chars/Puppet"]
+layout_mode = 0
+offset_left = -61.0
+offset_top = 200.0
+offset_right = 1.0
+offset_bottom = 262.0
+theme_override_fonts/font = ExtResource("26_yvxia")
+text = "-"
+icon_alignment = 1
+
+[node name="Plus" type="Button" parent="CustomNight/Control/Chars/Puppet"]
+layout_mode = 0
+offset_left = 200.0
+offset_top = 200.0
+offset_right = 262.0
+offset_bottom = 262.0
+theme_override_fonts/font = ExtResource("26_yvxia")
+text = "+"
+icon_alignment = 1
+
+[node name="Golden" type="TextureRect" parent="CustomNight/Control/Chars"]
+offset_left = 581.0
+offset_top = 200.0
+offset_right = 781.0
+offset_bottom = 400.0
+texture = ExtResource("37_0d5s4")
+expand_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="Level" type="Label" parent="CustomNight/Control/Chars/Golden"]
+layout_mode = 0
+offset_top = 200.0
+offset_right = 200.0
+offset_bottom = 262.0
+theme_override_fonts/font = ExtResource("26_yvxia")
+theme_override_font_sizes/font_size = 54
+text = "20"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Minus" type="Button" parent="CustomNight/Control/Chars/Golden"]
+layout_mode = 0
+offset_left = -61.0
+offset_top = 200.0
+offset_right = 1.0
+offset_bottom = 262.0
+theme_override_fonts/font = ExtResource("26_yvxia")
+text = "-"
+icon_alignment = 1
+
+[node name="Plus" type="Button" parent="CustomNight/Control/Chars/Golden"]
+layout_mode = 0
+offset_left = 200.0
+offset_top = 200.0
+offset_right = 262.0
+offset_bottom = 262.0
+theme_override_fonts/font = ExtResource("26_yvxia")
+text = "+"
+icon_alignment = 1
+
+[node name="Chica" type="TextureRect" parent="CustomNight/Control/Chars"]
+offset_left = 977.0
+offset_top = 200.0
+offset_right = 1177.0
+offset_bottom = 400.0
+texture = ExtResource("38_pa8yy")
+expand_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="Level" type="Label" parent="CustomNight/Control/Chars/Chica"]
+layout_mode = 0
+offset_top = 200.0
+offset_right = 200.0
+offset_bottom = 262.0
+theme_override_fonts/font = ExtResource("26_yvxia")
+theme_override_font_sizes/font_size = 54
+text = "20"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Minus" type="Button" parent="CustomNight/Control/Chars/Chica"]
+layout_mode = 0
+offset_left = -61.0
+offset_top = 200.0
+offset_right = 1.0
+offset_bottom = 262.0
+theme_override_fonts/font = ExtResource("26_yvxia")
+text = "-"
+icon_alignment = 1
+
+[node name="Plus" type="Button" parent="CustomNight/Control/Chars/Chica"]
+layout_mode = 0
+offset_left = 200.0
+offset_top = 200.0
+offset_right = 262.0
+offset_bottom = 262.0
+theme_override_fonts/font = ExtResource("26_yvxia")
+text = "+"
+icon_alignment = 1
+
+[node name="I" type="TextureRect" parent="CustomNight/Control/Chars"]
+offset_left = 387.0
+offset_top = 572.0
+offset_right = 587.0
+offset_bottom = 772.0
+texture = ExtResource("39_ftgtj")
+expand_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="Level" type="Label" parent="CustomNight/Control/Chars/I"]
+layout_mode = 0
+offset_top = 200.0
+offset_right = 200.0
+offset_bottom = 262.0
+theme_override_fonts/font = ExtResource("26_yvxia")
+theme_override_font_sizes/font_size = 54
+text = "20"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Minus" type="Button" parent="CustomNight/Control/Chars/I"]
+layout_mode = 0
+offset_left = -61.0
+offset_top = 200.0
+offset_right = 1.0
+offset_bottom = 262.0
+theme_override_fonts/font = ExtResource("26_yvxia")
+text = "-"
+icon_alignment = 1
+
+[node name="Plus" type="Button" parent="CustomNight/Control/Chars/I"]
+layout_mode = 0
+offset_left = 200.0
+offset_top = 200.0
+offset_right = 262.0
+offset_bottom = 262.0
+theme_override_fonts/font = ExtResource("26_yvxia")
+text = "+"
+icon_alignment = 1
+
+[node name="Mines" type="TextureRect" parent="CustomNight/Control/Chars"]
+offset_left = 1383.0
+offset_top = 200.0
+offset_right = 1583.0
+offset_bottom = 400.0
+texture = ExtResource("40_xt522")
+expand_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="Level" type="Label" parent="CustomNight/Control/Chars/Mines"]
+layout_mode = 0
+offset_top = 200.0
+offset_right = 200.0
+offset_bottom = 262.0
+theme_override_fonts/font = ExtResource("26_yvxia")
+theme_override_font_sizes/font_size = 54
+text = "20"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Minus" type="Button" parent="CustomNight/Control/Chars/Mines"]
+layout_mode = 0
+offset_left = -61.0
+offset_top = 200.0
+offset_right = 1.0
+offset_bottom = 262.0
+theme_override_fonts/font = ExtResource("26_yvxia")
+text = "-"
+icon_alignment = 1
+
+[node name="Plus" type="Button" parent="CustomNight/Control/Chars/Mines"]
+layout_mode = 0
+offset_left = 200.0
+offset_top = 200.0
+offset_right = 262.0
+offset_bottom = 262.0
+theme_override_fonts/font = ExtResource("26_yvxia")
+text = "+"
+icon_alignment = 1
+
+[node name="Me" type="TextureRect" parent="CustomNight/Control/Chars"]
+offset_left = 785.0
+offset_top = 572.0
+offset_right = 985.0
+offset_bottom = 772.0
+texture = ExtResource("41_dcs4r")
+expand_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="Level" type="Label" parent="CustomNight/Control/Chars/Me"]
+layout_mode = 0
+offset_top = 200.0
+offset_right = 200.0
+offset_bottom = 262.0
+theme_override_fonts/font = ExtResource("26_yvxia")
+theme_override_font_sizes/font_size = 54
+text = "20"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Minus" type="Button" parent="CustomNight/Control/Chars/Me"]
+layout_mode = 0
+offset_left = -61.0
+offset_top = 200.0
+offset_right = 1.0
+offset_bottom = 262.0
+theme_override_fonts/font = ExtResource("26_yvxia")
+text = "-"
+icon_alignment = 1
+
+[node name="Plus" type="Button" parent="CustomNight/Control/Chars/Me"]
+layout_mode = 0
+offset_left = 200.0
+offset_top = 200.0
+offset_right = 262.0
+offset_bottom = 262.0
+theme_override_fonts/font = ExtResource("26_yvxia")
+text = "+"
+icon_alignment = 1
+
+[node name="Myself" type="TextureRect" parent="CustomNight/Control/Chars"]
+offset_left = 1186.0
+offset_top = 572.0
+offset_right = 1386.0
+offset_bottom = 772.0
+texture = ExtResource("42_sm01i")
+expand_mode = 1
+metadata/_edit_lock_ = true
+
+[node name="Level" type="Label" parent="CustomNight/Control/Chars/Myself"]
+layout_mode = 0
+offset_top = 200.0
+offset_right = 200.0
+offset_bottom = 262.0
+theme_override_fonts/font = ExtResource("26_yvxia")
+theme_override_font_sizes/font_size = 54
+text = "20"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Minus" type="Button" parent="CustomNight/Control/Chars/Myself"]
+layout_mode = 0
+offset_left = -61.0
+offset_top = 200.0
+offset_right = 1.0
+offset_bottom = 262.0
+theme_override_fonts/font = ExtResource("26_yvxia")
+text = "-"
+icon_alignment = 1
+
+[node name="Plus" type="Button" parent="CustomNight/Control/Chars/Myself"]
+layout_mode = 0
+offset_left = 200.0
+offset_top = 200.0
+offset_right = 262.0
+offset_bottom = 262.0
+theme_override_fonts/font = ExtResource("26_yvxia")
+text = "+"
+icon_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="CustomNight/Control"]
+layout_mode = 0
+offset_right = 1980.0
+offset_bottom = 1080.0
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+metadata/_edit_lock_ = true
+
+[node name="Title" type="Label" parent="CustomNight/Control"]
+layout_mode = 0
+offset_right = 1980.0
+offset_bottom = 131.0
+theme_override_fonts/font = ExtResource("26_yvxia")
+theme_override_font_sizes/font_size = 54
+text = "Customize The Night"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_lock_ = true
+
+[node name="StartButton" type="Button" parent="CustomNight/Control"]
+layout_mode = 0
+offset_left = 1630.0
+offset_top = 930.0
+offset_right = 1980.0
+offset_bottom = 1080.0
+theme_override_fonts/font = ExtResource("26_yvxia")
+theme_override_font_sizes/font_size = 54
+text = "START"
+metadata/_edit_lock_ = true
+
+[node name="ClickSound" type="AudioStreamPlayer" parent="CustomNight/Control"]
+stream = ExtResource("28_uds2g")
+
+[node name="MusicSelector" type="OptionButton" parent="CustomNight/Control"]
+layout_mode = 0
+offset_left = 1660.0
+offset_right = 1980.0
+offset_bottom = 126.0
+theme_override_fonts/font = ExtResource("26_yvxia")
+item_count = 6
+popup/item_0/text = "Night 1 Music"
+popup/item_0/id = 0
+popup/item_1/text = "Night 2 Music"
+popup/item_1/id = 1
+popup/item_2/text = "Night 3 Music"
+popup/item_2/id = 2
+popup/item_3/text = "Night 4 Music"
+popup/item_3/id = 3
+popup/item_4/text = "Night 5 Music"
+popup/item_4/id = 4
+popup/item_5/text = "Night 6 Music"
+popup/item_5/id = 5
+metadata/_edit_lock_ = true
+
+[node name="Difficulty0" type="Button" parent="CustomNight/Control"]
+layout_mode = 0
+offset_top = 934.0
+offset_right = 197.0
+offset_bottom = 1080.0
+theme_override_fonts/font = ExtResource("26_yvxia")
+theme_override_font_sizes/font_size = 36
+text = "ALL 0"
+metadata/_edit_lock_ = true
+
+[node name="Difficulty5" type="Button" parent="CustomNight/Control"]
+layout_mode = 0
+offset_left = 347.0
+offset_top = 934.0
+offset_right = 544.0
+offset_bottom = 1080.0
+theme_override_fonts/font = ExtResource("26_yvxia")
+theme_override_font_sizes/font_size = 36
+text = "ALL 5"
+metadata/_edit_lock_ = true
+
+[node name="Difficulty10" type="Button" parent="CustomNight/Control"]
+layout_mode = 0
+offset_left = 670.0
+offset_top = 934.0
+offset_right = 867.0
+offset_bottom = 1080.0
+theme_override_fonts/font = ExtResource("26_yvxia")
+theme_override_font_sizes/font_size = 36
+text = "ALL 10"
+metadata/_edit_lock_ = true
+
+[node name="Difficulty15" type="Button" parent="CustomNight/Control"]
+layout_mode = 0
+offset_left = 973.0
+offset_top = 934.0
+offset_right = 1170.0
+offset_bottom = 1080.0
+theme_override_fonts/font = ExtResource("26_yvxia")
+theme_override_font_sizes/font_size = 36
+text = "ALL 15"
+metadata/_edit_lock_ = true
+
+[node name="Difficulty20" type="Button" parent="CustomNight/Control"]
+layout_mode = 0
+offset_left = 1317.0
+offset_top = 934.0
+offset_right = 1541.0
+offset_bottom = 1080.0
+theme_override_fonts/font = ExtResource("26_yvxia")
+theme_override_font_sizes/font_size = 36
+text = "ALL 20"
+metadata/_edit_lock_ = true
+
+[connection signal="pressed" from="CustomNight/Control/Chars/Puppet/Minus" to="CustomNight/Control" method="_on_puppet_minus_pressed"]
+[connection signal="pressed" from="CustomNight/Control/Chars/Puppet/Plus" to="CustomNight/Control" method="_on_puppet_plus_pressed"]
+[connection signal="pressed" from="CustomNight/Control/Chars/Golden/Minus" to="CustomNight/Control" method="_on_golden_minus_pressed"]
+[connection signal="pressed" from="CustomNight/Control/Chars/Golden/Plus" to="CustomNight/Control" method="_on_golden_plus_pressed"]
+[connection signal="pressed" from="CustomNight/Control/Chars/Chica/Minus" to="CustomNight/Control" method="_on_chica_minus_pressed"]
+[connection signal="pressed" from="CustomNight/Control/Chars/Chica/Plus" to="CustomNight/Control" method="_on_chica_plus_pressed"]
+[connection signal="pressed" from="CustomNight/Control/Chars/I/Minus" to="CustomNight/Control" method="_on_i_minus_pressed"]
+[connection signal="pressed" from="CustomNight/Control/Chars/I/Plus" to="CustomNight/Control" method="_on_i_plus_pressed"]
+[connection signal="pressed" from="CustomNight/Control/Chars/Mines/Minus" to="CustomNight/Control" method="_on_mines_minus_pressed"]
+[connection signal="pressed" from="CustomNight/Control/Chars/Mines/Plus" to="CustomNight/Control" method="_on_mines_plus_pressed"]
+[connection signal="pressed" from="CustomNight/Control/Chars/Me/Minus" to="CustomNight/Control" method="_on_me_minus_pressed"]
+[connection signal="pressed" from="CustomNight/Control/Chars/Me/Plus" to="CustomNight/Control" method="_on_me_plus_pressed"]
+[connection signal="pressed" from="CustomNight/Control/Chars/Myself/Minus" to="CustomNight/Control" method="_on_myself_minus_pressed"]
+[connection signal="pressed" from="CustomNight/Control/Chars/Myself/Plus" to="CustomNight/Control" method="_on_myself_plus_pressed"]
+[connection signal="pressed" from="CustomNight/Control/StartButton" to="CustomNight/Control" method="_on_start_button_pressed"]
+[connection signal="pressed" from="CustomNight/Control/Difficulty0" to="CustomNight/Control" method="_on_difficulty_0_pressed"]
+[connection signal="pressed" from="CustomNight/Control/Difficulty5" to="CustomNight/Control" method="_on_difficulty_5_pressed"]
+[connection signal="pressed" from="CustomNight/Control/Difficulty10" to="CustomNight/Control" method="_on_difficulty_10_pressed"]
+[connection signal="pressed" from="CustomNight/Control/Difficulty15" to="CustomNight/Control" method="_on_difficulty_15_pressed"]
+[connection signal="pressed" from="CustomNight/Control/Difficulty20" to="CustomNight/Control" method="_on_difficulty_20_pressed"]

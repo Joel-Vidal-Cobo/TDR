@@ -1,0 +1,148 @@
+[gd_scene load_steps=8 format=3 uid="uid://cw7vuxygrxufs"]
+
+[ext_resource type="Script" uid="uid://u622oaoiopra" path="res://scripts/warning screen.gd" id="1_8jokm"]
+[ext_resource type="FontFile" uid="uid://r6lke7jvjnkr" path="res://fonts/PressStart2P-Regular.ttf" id="1_lv2aw"]
+[ext_resource type="Texture2D" uid="uid://canhn4ecn8u50" path="res://textures/keyboard-layout-removebg-preview.png" id="4_18pth"]
+
+[sub_resource type="Animation" id="Animation_i3rmn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../TextureRect:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_fgfcp"]
+resource_name = "fade in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../TextureRect:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_lv2aw"]
+resource_name = "fade out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../TextureRect:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_18pth"]
+_data = {
+&"RESET": SubResource("Animation_i3rmn"),
+&"fade in": SubResource("Animation_fgfcp"),
+&"fade out": SubResource("Animation_lv2aw")
+}
+
+[node name="Warning" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_lock_ = true
+
+[node name="Background" type="CanvasLayer" parent="."]
+layer = -128
+
+[node name="ColorRect" type="ColorRect" parent="Background"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+metadata/_edit_lock_ = true
+
+[node name="message" type="Label" parent="."]
+modulate = Color(1, 1, 1, 0)
+texture_filter = 1
+layout_mode = 0
+offset_right = 1984.0
+offset_bottom = 1080.0
+theme_override_fonts/font = ExtResource("1_lv2aw")
+theme_override_font_sizes/font_size = 40
+text = "Warning!
+
+This game contains flashing lights, loud 
+noises, and lots of jumpscares!"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("1_8jokm")
+
+[node name="animation" type="AnimationPlayer" parent="message"]
+libraries = {
+&"": SubResource("AnimationLibrary_18pth")
+}
+
+[node name="timer" type="Timer" parent="message"]
+wait_time = 3.0
+one_shot = true
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 1148.0
+offset_top = 1.0
+offset_right = 1978.0
+offset_bottom = 531.0
+texture = ExtResource("4_18pth")

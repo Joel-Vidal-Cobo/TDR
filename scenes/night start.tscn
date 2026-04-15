@@ -1,0 +1,216 @@
+[gd_scene load_steps=28 format=3 uid="uid://cfbu0uiw3gqr8"]
+
+[ext_resource type="Script" uid="uid://bnq1mno8th20b" path="res://scripts/night_start.gd" id="1_itfh2"]
+[ext_resource type="FontFile" uid="uid://r6lke7jvjnkr" path="res://fonts/PressStart2P-Regular.ttf" id="2_cxlo3"]
+[ext_resource type="Texture2D" uid="uid://m8715g8ubalg" path="res://FNaF 1 Textures/Static & Menu/Divided Static/4.png" id="3_a8c4k"]
+[ext_resource type="AudioStream" uid="uid://bntw11mtm4nao" path="res://audio/blip3.wav" id="3_m0umd"]
+[ext_resource type="Script" uid="uid://dyy00xutw5gow" path="res://scripts/label.gd" id="3_u2heb"]
+[ext_resource type="Texture2D" uid="uid://tpp4nfdyhpg" path="res://FNaF 1 Textures/Static & Menu/Divided Static/6.png" id="4_3rb38"]
+[ext_resource type="Texture2D" uid="uid://b2dpwygj0kv5i" path="res://FNaF 1 Textures/Static & Menu/Divided Static/8.png" id="5_u2heb"]
+[ext_resource type="Texture2D" uid="uid://kgjkh6s3hyfw" path="res://FNaF 1 Textures/Static & Menu/Divided Static/9.png" id="6_ytlm2"]
+[ext_resource type="Texture2D" uid="uid://cpbm4p7syocxp" path="res://FNaF 1 Textures/Static & Menu/Divided Static/10.png" id="7_wgl08"]
+[ext_resource type="Texture2D" uid="uid://hovbm37ufcty" path="res://FNaF 1 Textures/Static & Menu/Divided Static/21.png" id="8_sw456"]
+[ext_resource type="Texture2D" uid="uid://bxnr2b0q0iscr" path="res://FNaF 1 Textures/Static & Menu/Divided Static/22.png" id="9_243jk"]
+[ext_resource type="Texture2D" uid="uid://crdbs5ki12cms" path="res://FNaF 1 Textures/Static & Menu/Divided Static/25.png" id="10_pkppl"]
+[ext_resource type="Texture2D" uid="uid://rhs3teswdga3" path="res://FNaF 1 Textures/Static & Menu/Divided Static/430.png" id="11_0h2wr"]
+[ext_resource type="Texture2D" uid="uid://dvswxm7ol60sl" path="res://FNaF 1 Textures/Static & Menu/Divided Static/434.png" id="12_ibnq5"]
+[ext_resource type="Texture2D" uid="uid://8nxbeod87rxj" path="res://FNaF 1 Textures/Static & Menu/Divided Static/435.png" id="13_3nbyf"]
+[ext_resource type="Texture2D" uid="uid://d360m7aqe0g6j" path="res://FNaF 1 Textures/Static & Menu/Divided Static/436.png" id="14_6kmwr"]
+[ext_resource type="Texture2D" uid="uid://dqg6l4oxxxhc0" path="res://FNaF 1 Textures/Static & Menu/Divided Static/437.png" id="15_1ld5b"]
+[ext_resource type="Texture2D" uid="uid://dqeqp105l56ms" path="res://FNaF 1 Textures/Static & Menu/Divided Static/438.png" id="16_nrniw"]
+[ext_resource type="Texture2D" uid="uid://bxhavoaovv8vw" path="res://FNaF 1 Textures/Static & Menu/Divided Static/439.png" id="17_i7cjs"]
+[ext_resource type="Texture2D" uid="uid://cl23nb5bf8baa" path="res://FNaF 1 Textures/Other/482.png" id="19_3rb38"]
+
+[sub_resource type="Animation" id="Animation_cxlo3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_itfh2"]
+resource_name = "fade out"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_m0umd"]
+_data = {
+&"RESET": SubResource("Animation_cxlo3"),
+&"fade out": SubResource("Animation_itfh2")
+}
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bsyb4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_a8c4k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_3rb38")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_u2heb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ytlm2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_wgl08")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_sw456")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_243jk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_pkppl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_0h2wr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_ibnq5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_3nbyf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_6kmwr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_1ld5b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_nrniw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_i7cjs")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"default",
+"speed": 24.0
+}]
+
+[sub_resource type="Animation" id="Animation_u2heb"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_3rb38"]
+resource_name = "fade out"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.95),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ytlm2"]
+_data = {
+&"RESET": SubResource("Animation_u2heb"),
+&"fade out": SubResource("Animation_3rb38")
+}
+
+[node name="night" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_itfh2")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="."]
+z_index = 1
+layout_mode = 0
+offset_left = 816.0
+offset_top = 522.0
+offset_right = 1104.0
+offset_bottom = 558.0
+theme_override_fonts/font = ExtResource("2_cxlo3")
+theme_override_font_sizes/font_size = 36
+text = "12:00 AM
+
+1st Night"
+script = ExtResource("3_u2heb")
+
+[node name="animation" type="AnimationPlayer" parent="Label"]
+libraries = {
+&"": SubResource("AnimationLibrary_m0umd")
+}
+
+[node name="blip flash" type="AnimatedSprite2D" parent="."]
+z_index = 2
+position = Vector2(990, 540)
+scale = Vector2(1.54688, 1.5)
+sprite_frames = SubResource("SpriteFrames_bsyb4")
+frame = 15
+frame_progress = 1.0
+
+[node name="blip" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+stream = ExtResource("3_m0umd")
+autoplay = true
+
+[node name="clock" type="Sprite2D" parent="."]
+process_mode = 3
+z_index = 5
+position = Vector2(1860, 975)
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("19_3rb38")
+
+[node name="animation" type="AnimationPlayer" parent="clock"]
+libraries = {
+&"": SubResource("AnimationLibrary_ytlm2")
+}
