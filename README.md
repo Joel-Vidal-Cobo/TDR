@@ -1,2 +1,2 @@
 # Cursed Arcade
-Videojoc
+This is the videogame made by Joel Vidal for the TDR based on the FNAF videogames.
