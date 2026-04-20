@@ -31,23 +31,23 @@ func move() -> void:
 	match old_pos:
 		"balcony0": 
 			Global.balconyPos = "balcony1"
-			$"walk".volume_db = -10
+			$"walk".volume_db = -25
 			$"walk".play()
 		"balcony1": 
 			Global.balconyPos = "balcony2"
-			$"walk".volume_db = -10
+			$"walk".volume_db = -25
 			$"walk".play()
 		"balcony2": 
 			Global.balconyPos = "balcony3"
-			$"walk".volume_db = -10
+			$"walk".volume_db = -25
 			$"walk".play()
 		"balcony3": 
 			Global.balconyPos = "balcony4"
-			$"walk".volume_db = -10
+			$"walk".volume_db = -25
 			$"walk".play()
 		"balcony4": 
 			Global.balconyPos = "balcony5"
-			$"walk".volume_db = -10
+			$"walk".volume_db = -25
 			$"walk".play()
 		"balcony5": 
 			Global.balconyPos = "hall1"
@@ -71,7 +71,7 @@ func check_door_collision() -> void:
 		if Global.doorClose:
 			Global.balconyPos = "balcony1"
 			Global.power -= 10
-			$timer.wait_time = 2.5 
+			$timer.wait_time = 1.0 
 			$idlekill.stop()
 			if has_node("DoorKnock"):
 				$DoorKnock.play()
@@ -82,7 +82,7 @@ func check_door_collision() -> void:
 		$idlekill.start()
 
 func randomizeTimeout():
-	moveTimer = randi_range(50, 600)
+	moveTimer = randi_range(50, 100)
 
 func jumpscare():
 	$timer.stop()

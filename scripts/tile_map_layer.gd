@@ -46,16 +46,19 @@ func _ammount_lives() -> void:
 		$Live3.visible = false
 
 func set_up_mines(avoid : Vector2i) -> void:
+	var safe = get_surrounding_indices(avoid)
+	safe.append(get_cell_index(avoid))
+	
+	var available = []
+	for i in range(cells.size()):
+		if not i in safe:
+			available.append(i)
+	
+	available.shuffle()
+	
 	for i in range(MINE_COUNT):
-		cells[i] = 0
-	
-	var safe_zone = get_surrounding_indices(avoid)
-	safe_zone.append(get_cell_index(avoid))
-	
-	cells.shuffle()
-	
-	while cells[get_cell_index(avoid)] == 0:
-		cells.shuffle()
+		var mine_idx = available[i]
+		cells[mine_idx] = 0
 	
 	for y in range(CELL_COLUMNS):
 		for x in range(CELL_ROWS):
@@ -64,13 +67,14 @@ func set_up_mines(avoid : Vector2i) -> void:
 			
 			if cells[idx] != 0:
 				var mine_count := 0
-	
 				for neighbor_idx in get_surrounding_indices(current_pos):
 					if cells[neighbor_idx] == 0:
 						mine_count += 1
 				
 				if mine_count > 0:
 					cells[idx] = mine_count
+				else:
+					cells[idx] = -1
 
 func _input(event : InputEvent) -> void:
 	if game_ended: return

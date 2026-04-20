@@ -1,117 +1,100 @@
 extends Node2D
 
-@export var vent_textures_path : Dictionary = {
-	"ventnum1": "vent1",
-	"ventnum2": "vent2",
-	"bot_vent1": "vent3",
-	"bot_vent2": "vent4",
-	"bot_vent3": "vent5",
-	"midtop_vent1": "vent6",
-	"midtop_vent2": "vent7",
-	"midtop_vent3": "vent8",
-	"mid_vent1": "vent9",
-	"mid_vent2": "vent10",
-	"mid_vent3": "vent11",
-	"top_vent1": "vent12",
-	"top_vent2": "vent13",
-	"top_vent3": "vent14",
-	"top_vent4": "vent15"
-}
-
 var current_path: String = ""
 
 func _ready() -> void:
-	hide_all_vents()
+	if Global.vent1Pos == "" or Global.vent1Pos == null:
+		Global.vent1Pos = "ventnum11"
+	
+	initial_hide_all()
+	force_visible_per_position(Global.vent1Pos)
+	
 	if has_node("timer"):
 		$timer.timeout.connect(_on_timer_timeout)
 		$timer.start()
 
 func _on_timer_timeout() -> void:
 	if randi_range(1, 40) <= Global.AI["Chica"]:
-		move()
+		move_chica()
 
-func move() -> void:
+func move_chica() -> void:
 	var old_pos = Global.vent1Pos
-	
+	if old_pos == "" or old_pos == null: 
+		old_pos = "ventnum11"
+
 	match old_pos:
-		"ventnum1": 
-			Global.vent1Pos = "ventnum2"
-		"ventnum2":
+		"ventnum11": Global.vent1Pos = "ventnum21"
+		"ventnum21":
 			var r = randi_range(1, 3)
-			if r == 1:
-				current_path = "top"
-				Global.vent1Pos = "midtop_vent1"
-			elif r == 2:
-				current_path = "bot"
-				Global.vent1Pos = "bot_vent1"
-			else:
-				current_path = "mid"
-				Global.vent1Pos = "midtop_vent1"
-		
-		"midtop_vent1": Global.vent1Pos = "midtop_vent2"
-		"midtop_vent2": Global.vent1Pos = "midtop_vent3"
-		"midtop_vent3":
-			if current_path == "top":
-				Global.vent1Pos = "top_vent1"
-			else:
-				Global.vent1Pos = "mid_vent1"
-		
-		"top_vent1": Global.vent1Pos = "top_vent2"
-		"top_vent2": Global.vent1Pos = "top_vent3"
-		"top_vent3": Global.vent1Pos = "top_vent4"
-		"top_vent4": Global.vent1Pos = "office"
-		
-		"mid_vent1": Global.vent1Pos = "mid_vent2"
-		"mid_vent2": Global.vent1Pos = "mid_vent3"
-		"mid_vent3": Global.vent1Pos = "office"
-		
-		"bot_vent1": Global.vent1Pos = "bot_vent2"
-		"bot_vent2": Global.vent1Pos = "bot_vent3"
-		"bot_vent3": Global.vent1Pos = "office"
-		
+			if r == 1: current_path = "top"; Global.vent1Pos = "midtop_vent11"
+			elif r == 2: current_path = "bot"; Global.vent1Pos = "bot_vent11"
+			else: current_path = "mid"; Global.vent1Pos = "midtop_vent11"
+		"midtop_vent11": Global.vent1Pos = "midtop_vent21"
+		"midtop_vent21": Global.vent1Pos = "midtop_vent31"
+		"midtop_vent31":
+			if current_path == "top": Global.vent1Pos = "top_vent11"
+			else: Global.vent1Pos = "mid_vent11"
+		"top_vent11": Global.vent1Pos = "top_vent21"
+		"top_vent21": Global.vent1Pos = "top_vent31"
+		"top_vent31": Global.vent1Pos = "top_vent41"
+		"top_vent41": Global.vent1Pos = "office"
+		"mid_vent11": Global.vent1Pos = "mid_vent21"
+		"mid_vent21": Global.vent1Pos = "mid_vent31"
+		"mid_vent31": Global.vent1Pos = "office"
+		"bot_vent11": Global.vent1Pos = "bot_vent21"
+		"bot_vent21": Global.vent1Pos = "bot_vent31"
+		"bot_vent31": Global.vent1Pos = "office"
 		"office":
 			check_block()
 			return
-
-	update_vent_visuals(old_pos)
+		_:
+			Global.vent1Pos = "ventnum11"
 	
-	if old_pos != Global.vent1Pos:
-		Global.I_moved.emit()
+	force_visible_per_position(Global.vent1Pos)
+	Global.Chica_moved.emit()
 
-func update_vent_visuals(old_pos: String) -> void:
-	if vent_textures_path.has(old_pos):
-		var old_node = vent_textures_path[old_pos]
-		if has_node(old_node):
-			get_node(old_node).visible = false
-			
-	if vent_textures_path.has(Global.vent1Pos):
-		var new_node = vent_textures_path[Global.vent1Pos]
-		if has_node(new_node):
-			get_node(new_node).visible = true
+func force_visible_per_position(pos: String) -> void:
+	initial_hide_all()
+	match pos:
+		"ventnum11": if has_node("vent_1"): $vent_1.show()
+		"ventnum21": if has_node("vent_2"): $vent_2.show()
+		"bot_vent11": if has_node("vent_3"): $vent_3.show()
+		"bot_vent21": if has_node("vent_4"): $vent_4.show()
+		"bot_vent31": if has_node("vent_5"): $vent_5.show()
+		"midtop_vent11": if has_node("vent_6"): $vent_6.show()
+		"midtop_vent21": if has_node("vent_7"): $vent_7.show()
+		"midtop_vent31": if has_node("vent_8"): $vent_8.show()
+		"mid_vent11": if has_node("vent_9"): $vent_9.show()
+		"mid_vent21": if has_node("vent_10"): $vent_10.show()
+		"mid_vent31": if has_node("vent_11"): $vent_11.show()
+		"top_vent11": if has_node("vent_12"): $vent_12.show()
+		"top_vent21": if has_node("vent_13"): $vent_13.show()
+		"top_vent31": if has_node("vent_14"): $vent_14.show()
+		"top_vent41": if has_node("vent_15"): $vent_15.show()
 
-func hide_all_vents() -> void:
-	for node_name in vent_textures_path.values():
-		if has_node(node_name):
-			get_node(node_name).visible = false
+func initial_hide_all() -> void:
+	for child in get_children():
+		if child.name.begins_with("vent_"):
+			child.hide()
 
 func check_block() -> void:
-	var blocked = false
-	if current_path == "top" and Global.block1: blocked = true
-	elif current_path == "mid" and Global.block2: blocked = true
-	elif current_path == "bot" and Global.block3: blocked = true
-	
-	if blocked:
-		if has_node("bonk"):
-			$bonk.play()
-		hide_all_vents()
-		Global.vent1Pos = "ventnum1"
-		current_path = ""
-		Global.power -= 10
-	else:
-		jumpscare()
+	if $timer.timeout:
+		var blocked = false
+		if current_path == "top" and Global.block1 == true: blocked = true
+		elif current_path == "mid" and Global.block2 == true: blocked = true
+		elif current_path == "bot" and Global.block3: blocked = true
+		
+		if blocked:
+			if has_node("bonk1"):
+				$bonk1.play()
+			initial_hide_all()
+			Global.vent2Pos = "ventnum11"
+			current_path = ""
+			Global.power -= 10
+		else:
+			do_jumpscare()
 
-func jumpscare():
-	if has_node("timer"):
-		$timer.stop()
-	hide_all_vents()
+func do_jumpscare() -> void:
+	if has_node("timer"): $timer.stop()
+	initial_hide_all()
 	Global.Chicajumpscare.emit()

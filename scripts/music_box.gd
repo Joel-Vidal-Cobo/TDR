@@ -30,8 +30,17 @@ func _ready() -> void:
 func update_max_capacity() -> void:
 	var puppet_ai = Global.AI.get("Puppet", 0)
 	var new_max = 100.0 - (puppet_ai * 3.0)
+	
+	if puppet_ai == 0:
+		new_max = 999
+	
 	max_value = max(10.0, new_max)
-
+	
+	if has_node("Circle"):
+		if puppet_ai > 0:
+			$Circle.visible = true
+		else:
+			$Circle.visible = false
 func _process(delta: float) -> void:
 	update_max_capacity()
 	

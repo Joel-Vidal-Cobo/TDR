@@ -24,7 +24,7 @@ var night_reached = 1
 var trophies = 0
 var night_progress = 12
 var closetPos : String = "room0"
-var vent1Pos : String = ""
+var vent1Pos : String = "ventnum11"
 var vent2Pos : String = "kitchen1"
 var balconyPos : String = "balcony1"
 var active := true
@@ -61,8 +61,14 @@ var min_ai : int = 0
 
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
+	Me_ai = 0
+	Myself_ai = 0
+	i_ai = 0
+	fred_ai = 0
+	bon_ai = 0
+	min_ai = 0
+	chic_ai = 0
 	setUpVars()
-
 func setUpVars() -> void:
 	SaveData.load_game()
 	playbomb = false
@@ -102,7 +108,12 @@ func _input(event: InputEvent) -> void:
 			get_tree().quit()
 		if event.keycode == KEY_F11:
 			toggle_fullscreen()
-
+		if event.keycode == KEY_C:
+			Global.night = 7
+			Global.night_reached = 7
+			Global.custom = true
+			SaveData.save_game()
+			get_tree().reload_current_scene()
 func toggle_fullscreen():
 	if DisplayServer.window_get_mode() == DisplayServer.WINDOW_MODE_EXCLUSIVE_FULLSCREEN:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)

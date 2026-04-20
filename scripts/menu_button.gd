@@ -48,6 +48,7 @@ func _gui_input(event : InputEvent) -> void:
 			var scene : PackedScene = load("res://scenes/night start.tscn")
 			get_tree().change_scene_to_packed(scene)
 		if name == "custom night":
+			Global.night = 7
 			$"../../GUI".visible = false
 			$"../../scan line".visible = false
 			$"../../divided static".visible = false

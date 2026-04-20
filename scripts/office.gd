@@ -4,13 +4,14 @@ func _ready() -> void:
 	
 	SaveData.load_game()
 	Global.setUpVars()
-	
+	$stop.visible = true
+	$"office out".visible = false
 	Global.Puppetjumpscare.connect(_on_puppet_jumpscare)
 	Global.Ijumpscare.connect(_on_i_jumpscare)
 	Global.Mejumpscare.connect(_on_me_jumpscare)
 	Global.Myselfjumpscare.connect(_on_myself_jumpscare)
 	Global.GoldenFreddyjumpscare.connect(_on_golden_jumpscare)
-	Global.Chicajumpscare.connect
+	Global.Chicajumpscare.connect(_on_chica_jumpscare)
 	if has_node("piano"):
 		$piano.finished.connect(_on_piano_finished)
 	match Global.night:
@@ -26,12 +27,55 @@ func _ready() -> void:
 	
 func _process(_delta: float) -> void:
 	update_piano_volume()
-	
+	if Global.power <= 0 and Global.active == true:
+		power_out_sequence()
 func play_call_night():
 	var phone_path = ""
 	phone_path = "res://audio/calls/Night " + str(Global.night) + ".mp3"
 	$phone.stream = load(phone_path)
 	$phone.play()
+func on_stop_call_pressed() -> void:
+	$phone.stop()
+	$stop.visible = false
+func execute_final_jumpscare() -> void:
+	if has_node("timer"): 
+		$timer.stop()
+	Global.Myselfjumpscare.emit()
+func power_out_sequence() -> void:
+	Global.active = false
+	Global.usage = 0
+	Global.camUp = false
+	Global.power = 0
+	
+	if has_node("GUI/power"): 
+		$GUI/power.text = str(0) + "[font_size={36}]%[/font_size]"
+	if has_node("GUI/usage"): 
+		$GUI/usage.frame = 0
+	
+	get_tree().paused = true
+	
+	$"office out".visible = true
+	
+	var to_hide = ["GUI/camera","GUI/camera arrow", "GUI/camera detection", "blind", "behind", "pc", "monitor", "GoldenFreddy"]
+	for path in to_hide:
+		var node = get_node_or_null(path)
+		if node: node.visible = false
+
+	if has_node("powerout"): 
+		$powerout.play()
+	
+	await get_tree().create_timer(randf_range(2.0, 20.0)).timeout
+	
+	if has_node("ToreadorMusic"):
+		$ToreadorMusic.play()
+		await get_tree().create_timer(randf_range(5.0, 20.0)).timeout
+		$ToreadorMusic.stop()
+	else:
+		await get_tree().create_timer(randf_range(5.0, 20.0)).timeout
+	
+	await get_tree().create_timer(randf_range(2.0, 20.0)).timeout
+	
+	execute_final_jumpscare()
 func play_night_music() -> void:
 	if not has_node("piano"): return
 	
@@ -50,14 +94,13 @@ func _on_piano_finished() -> void:
 
 func update_piano_volume() -> void:
 	if has_node("piano"):
-		$piano.volume_db = 0 if Global.currentCamera == "piano" else -50
+		$piano.volume_db = 0 if Global.currentCamera == "piano" and Global.camUp else -50
 func _on_chica_jumpscare(): execute_jumpscare("Vent1")
 func _on_puppet_jumpscare(): execute_jumpscare("Puppet")
 func _on_i_jumpscare(): execute_jumpscare("I")
 func _on_me_jumpscare(): execute_jumpscare("Me")
 func _on_golden_jumpscare(): execute_jumpscare("Golden")
 func _on_myself_jumpscare(): execute_jumpscare("Myself")
-
 func execute_jumpscare(animatronic_name: String) -> void:
 	get_tree().paused = true
 	Global.active = false
@@ -91,3 +134,8 @@ func execute_jumpscare(animatronic_name: String) -> void:
 		get_tree().change_scene_to_file("res://scenes/Menu.tscn")
 	else:
 		get_tree().change_scene_to_file("res://scenes/Menu.tscn")
+func _input(event: InputEvent) -> void:
+	if event is InputEventKey and event.pressed:
+		if event.keycode == KEY_P:
+				Global.power = -1
+				power_out_sequence()

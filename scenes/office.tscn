@@ -1,4 +1,4 @@
-[gd_scene load_steps=237 format=3 uid="uid://6fxbvu6sbjja"]
+[gd_scene load_steps=240 format=3 uid="uid://6fxbvu6sbjja"]
 
 [ext_resource type="Script" uid="uid://dmifmcmtb1fg" path="res://scripts/camera.gd" id="1_3e7dm"]
 [ext_resource type="Script" uid="uid://cwak5baknmc47" path="res://scripts/office.gd" id="1_u213d"]
@@ -198,6 +198,9 @@
 [ext_resource type="Texture2D" uid="uid://ch3un67gpwjwf" path="res://textures/Puppetjump/frame_09_delay-0.1s.png" id="194_t1ih0"]
 [ext_resource type="Texture2D" uid="uid://41kn0ebugh8b" path="res://textures/Puppetjump/frame_10_delay-0.1s.png" id="195_xmbia"]
 [ext_resource type="AudioStream" uid="uid://cuml71ogtcmbf" path="res://audio/XSCREAM.wav" id="197_kpl2w"]
+[ext_resource type="Texture2D" uid="uid://v182e4bchx8t" path="res://textures/fotos/IMG_3106.jpg" id="199_76nhb"]
+[ext_resource type="AudioStream" uid="uid://betwgekc4ikd7" path="res://audio/music box.wav" id="200_48iak"]
+[ext_resource type="AudioStream" uid="uid://bmxsuaj3i4f0j" path="res://audio/powerdown.wav" id="201_lgogi"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0p3hi"]
 animations = [{
@@ -1409,7 +1412,6 @@ shape = SubResource("RectangleShape2D_hley2")
 script = ExtResource("150_awxbk")
 
 [node name="timer" type="Timer" parent="MeAI"]
-wait_time = 2.0
 autostart = true
 
 [node name="randomize" type="Timer" parent="MeAI"]
@@ -1443,7 +1445,6 @@ autostart = true
 stream = ExtResource("48_22t6e")
 
 [node name="IAI" type="Node2D" parent="."]
-visible = false
 script = ExtResource("49_1jo4f")
 
 [node name="timer" type="Timer" parent="IAI"]
@@ -1614,23 +1615,27 @@ texture = ExtResource("161_tltkk")
 
 [node name="ChicaAI" type="Node2D" parent="."]
 visible = false
+z_index = 10
 script = ExtResource("55_kpl2w")
 
 [node name="timer" type="Timer" parent="ChicaAI"]
 wait_time = 2.5
 autostart = true
 
-[node name="vent1" type="TextureRect" parent="ChicaAI"]
-z_index = 1
-offset_left = 27.0
+[node name="vent_1" type="TextureRect" parent="ChicaAI"]
+visible = false
+top_level = true
+z_index = 10
+offset_left = 57.0
 offset_top = 320.0
-offset_right = 102.0
+offset_right = 132.0
 offset_bottom = 395.0
 texture = ExtResource("176_48iak")
 expand_mode = 1
 
-[node name="vent2" type="TextureRect" parent="ChicaAI"]
-z_index = 1
+[node name="vent_2" type="TextureRect" parent="ChicaAI"]
+visible = false
+z_index = 10
 offset_left = 324.0
 offset_top = 320.0
 offset_right = 399.0
@@ -1638,8 +1643,9 @@ offset_bottom = 395.0
 texture = ExtResource("176_48iak")
 expand_mode = 1
 
-[node name="vent3" type="TextureRect" parent="ChicaAI"]
-z_index = 1
+[node name="vent_3" type="TextureRect" parent="ChicaAI"]
+visible = false
+z_index = 10
 offset_left = 777.0
 offset_top = 395.0
 offset_right = 852.0
@@ -1647,8 +1653,9 @@ offset_bottom = 470.0
 texture = ExtResource("181_dstab")
 expand_mode = 1
 
-[node name="vent4" type="TextureRect" parent="ChicaAI"]
-z_index = 1
+[node name="vent_4" type="TextureRect" parent="ChicaAI"]
+visible = false
+z_index = 10
 offset_left = 976.0
 offset_top = 570.0
 offset_right = 1051.0
@@ -1656,8 +1663,9 @@ offset_bottom = 645.0
 texture = ExtResource("181_dstab")
 expand_mode = 1
 
-[node name="vent5" type="TextureRect" parent="ChicaAI"]
-z_index = 1
+[node name="vent_5" type="TextureRect" parent="ChicaAI"]
+visible = false
+z_index = 10
 offset_left = 1251.0
 offset_top = 570.0
 offset_right = 1326.0
@@ -1665,8 +1673,9 @@ offset_bottom = 645.0
 texture = ExtResource("181_dstab")
 expand_mode = 1
 
-[node name="vent6" type="TextureRect" parent="ChicaAI"]
-z_index = 1
+[node name="vent_6" type="TextureRect" parent="ChicaAI"]
+visible = false
+z_index = 10
 offset_left = 682.0
 offset_top = 75.0
 offset_right = 757.0
@@ -1674,8 +1683,9 @@ offset_bottom = 150.0
 texture = ExtResource("176_48iak")
 expand_mode = 1
 
-[node name="vent7" type="TextureRect" parent="ChicaAI"]
-z_index = 1
+[node name="vent_7" type="TextureRect" parent="ChicaAI"]
+visible = false
+z_index = 10
 offset_left = 1456.0
 offset_top = 75.0
 offset_right = 1531.0
@@ -1683,8 +1693,9 @@ offset_bottom = 150.0
 texture = ExtResource("181_dstab")
 expand_mode = 1
 
-[node name="vent8" type="TextureRect" parent="ChicaAI"]
-z_index = 1
+[node name="vent_8" type="TextureRect" parent="ChicaAI"]
+visible = false
+z_index = 10
 offset_left = 1959.0
 offset_top = 75.0
 offset_right = 2034.0
@@ -1692,8 +1703,9 @@ offset_bottom = 150.0
 texture = ExtResource("181_dstab")
 expand_mode = 1
 
-[node name="vent9" type="TextureRect" parent="ChicaAI"]
-z_index = 1
+[node name="vent_9" type="TextureRect" parent="ChicaAI"]
+visible = false
+z_index = 10
 offset_left = 1959.0
 offset_top = 285.0
 offset_right = 2034.0
@@ -1701,8 +1713,9 @@ offset_bottom = 360.0
 texture = ExtResource("181_dstab")
 expand_mode = 1
 
-[node name="vent10" type="TextureRect" parent="ChicaAI"]
-z_index = 1
+[node name="vent_10" type="TextureRect" parent="ChicaAI"]
+visible = false
+z_index = 10
 offset_left = 1714.0
 offset_top = 285.0
 offset_right = 1789.0
@@ -1710,8 +1723,9 @@ offset_bottom = 360.0
 texture = ExtResource("181_dstab")
 expand_mode = 1
 
-[node name="vent11" type="TextureRect" parent="ChicaAI"]
-z_index = 1
+[node name="vent_11" type="TextureRect" parent="ChicaAI"]
+visible = false
+z_index = 10
 offset_left = 1533.0
 offset_top = 428.0
 offset_right = 1608.0
@@ -1719,8 +1733,9 @@ offset_bottom = 503.0
 texture = ExtResource("181_dstab")
 expand_mode = 1
 
-[node name="vent12" type="TextureRect" parent="ChicaAI"]
-z_index = 1
+[node name="vent_12" type="TextureRect" parent="ChicaAI"]
+visible = false
+z_index = 10
 offset_left = 2471.0
 offset_top = 75.0
 offset_right = 2546.0
@@ -1728,8 +1743,9 @@ offset_bottom = 150.0
 texture = ExtResource("181_dstab")
 expand_mode = 1
 
-[node name="vent13" type="TextureRect" parent="ChicaAI"]
-z_index = 1
+[node name="vent_13" type="TextureRect" parent="ChicaAI"]
+visible = false
+z_index = 10
 offset_left = 2668.0
 offset_top = 330.0
 offset_right = 2743.0
@@ -1737,8 +1753,9 @@ offset_bottom = 405.0
 texture = ExtResource("181_dstab")
 expand_mode = 1
 
-[node name="vent14" type="TextureRect" parent="ChicaAI"]
-z_index = 1
+[node name="vent_14" type="TextureRect" parent="ChicaAI"]
+visible = false
+z_index = 10
 offset_left = 2315.0
 offset_top = 570.0
 offset_right = 2390.0
@@ -1746,8 +1763,9 @@ offset_bottom = 645.0
 texture = ExtResource("181_dstab")
 expand_mode = 1
 
-[node name="vent15" type="TextureRect" parent="ChicaAI"]
-z_index = 1
+[node name="vent_15" type="TextureRect" parent="ChicaAI"]
+visible = false
+z_index = 10
 offset_left = 1887.0
 offset_top = 570.0
 offset_right = 1962.0
@@ -1755,7 +1773,7 @@ offset_bottom = 645.0
 texture = ExtResource("181_dstab")
 expand_mode = 1
 
-[node name="bonk" type="AudioStreamPlayer" parent="ChicaAI"]
+[node name="bonk1" type="AudioStreamPlayer" parent="ChicaAI"]
 stream = ExtResource("52_h8ouu")
 
 [node name="GUI" type="CanvasLayer" parent="."]
@@ -2160,7 +2178,7 @@ autoplay = true
 
 [node name="windup" type="AudioStreamPlayer" parent="GUI/camera/musicbox"]
 stream = ExtResource("151_05pie")
-volume_db = 24.0
+volume_db = 5.0
 
 [node name="sixAm" type="CanvasLayer" parent="."]
 process_mode = 3
@@ -2377,7 +2395,7 @@ visible = false
 position = Vector2(990, 540)
 scale = Vector2(0.854922, 0.349741)
 sprite_frames = SubResource("SpriteFrames_06rmy")
-animation = &"Me"
+animation = &"vent1"
 
 [node name="scare1" type="AudioStreamPlayer" parent="Jumpscare"]
 stream = ExtResource("184_p3tfb")
@@ -2392,6 +2410,28 @@ animation = &"Golden"
 [node name="scare2" type="AudioStreamPlayer" parent="Jumpscare"]
 stream = ExtResource("197_kpl2w")
 
+[node name="stop" type="Button" parent="."]
+offset_left = 123.0
+offset_right = 275.0
+offset_bottom = 25.0
+theme_override_fonts/font = ExtResource("19_kviqm")
+text = "Mute Call"
+
+[node name="office out" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(1512, 540)
+scale = Vector2(0.75, 0.357143)
+texture = ExtResource("199_76nhb")
+metadata/_edit_lock_ = true
+
+[node name="ToreadorMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("200_48iak")
+
+[node name="powerout" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("201_lgogi")
+
+[node name="ambiencepower" type="AudioStreamPlayer" parent="."]
+
 [connection signal="input_event" from="blind" to="blind" method="_on_input_event"]
 [connection signal="input_event" from="nose honk" to="nose honk" method="_on_input_event"]
 [connection signal="input_event" from="pc" to="pc" method="_on_input_event"]
@@ -2402,3 +2442,4 @@ stream = ExtResource("197_kpl2w")
 [connection signal="input_event" from="block" to="block" method="_on_input_event"]
 [connection signal="button_down" from="GUI/camera/musicbox/Button" to="GUI/camera/musicbox" method="_on_button_down"]
 [connection signal="button_up" from="GUI/camera/musicbox/Button" to="GUI/camera/musicbox" method="_on_button_up"]
+[connection signal="pressed" from="stop" to="." method="on_stop_call_pressed"]

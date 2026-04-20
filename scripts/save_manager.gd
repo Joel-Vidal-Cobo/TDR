@@ -11,6 +11,7 @@ func _process(delta: float) -> void:
 		delete_timer += delta
 		if delete_timer >= DELETE_THRESHOLD:
 			delete_save_data()
+			SaveData.save_game()
 	else:
 		delete_timer = 0.0
 
